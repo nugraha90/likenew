@@ -9,7 +9,7 @@
 
   function Axi(val) {
     axios.get(val).then((response) => {
-      document.getElementById("content").innerHTML =  response.data;
+      document.getElementById("content").innerHTML = header.includes('application/json') == true ? JSON.stringify(response.data):response.data
     }).catch(function(error) {
       document.getElementById("content").innerHTML = "Data Cannot fetch";
     });
